@@ -1,0 +1,70 @@
+.page{
+    margin-top: 10px;
+}
+.artical{
+    margin-right: 500px;
+    border-radius: 2px;
+    width: 700px;
+    background-color: white;
+}
+.artical header{
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #9797971a;
+}
+.artical header li{
+    display: inline-block;
+    padding: 0 12px;
+    font-size: 14px;
+    color: #909090;
+    user-select: none;
+    border-right: 1px solid hsla(0,0%,59.2%,.2);
+}
+.option li{
+    padding: 15px;
+}
+.option ul li{
+    display: inline-block;
+    height: 24px;
+    margin: 0;
+    padding:0 8px 0;
+    font-size: 12px;
+    line-height: 4px;
+    color: #b2bac2;
+    border-radius: 1px;
+    border: 1px solid #edeeef;
+}
+.option ul li:hover{
+    background-color: rgb(247, 248, 250);
+}
+.option ul li:nth-of-type(4){
+    display: none;
+}
+.option li:hover{
+    background-color: rgb(252, 252, 252);
+}
+.option li:hover :nth-of-type(4){
+    display: inline-block;
+}
+/* 文章标题 */
+.option h3{
+    margin: .5rem 0 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.option h3:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.option div{
+    cursor: pointer;
+
+    font-size: 12px;
+    color: #909090;
+}
+.option ul li span{
+    position: relative;
+    top: -3px;
+    margin-left: .2em;
+    font-weight: 700;
+}

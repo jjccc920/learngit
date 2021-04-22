@@ -1,0 +1,192 @@
+.headTop,
+.headBottom{
+    padding: 10px 0 0px;
+    background: #fff;
+    border-bottom: 1px solid #f1f1f1;
+    color: #909090;
+}
+
+.logo{
+    margin-right: 1.5rem;
+}
+.headTop ul{
+    display: inline-flex;
+}
+header .center ul li{
+    display: inline-block;
+    position: relative;
+    top: -10px;
+
+    margin: 0;
+    padding: 0 1.2rem 0;
+
+    cursor: pointer;
+}
+.center .blue{
+    color: #007fff;
+}
+header .center input{
+    position: relative;
+
+    height: 10px;
+    margin-left: 40px;
+    padding: .6rem 0 .6rem 1rem;
+    outline: none;
+    font-size: 13px;
+    border: 1px solid #97979733;
+    background-color: rgba(227,231,236,.2);
+
+    border-radius: 2px;
+}
+/* 修改placeholder文字属性 */
+input::-webkit-input-placeholder{
+    color: rgb(143, 143, 143);
+}
+header .center button{
+    position: relative;
+    right: 45px;
+    top: 3px;
+    
+    width: 40px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+
+    cursor: pointer;
+}
+.headTop .write{
+    position: relative;
+    top: -6px;
+    width: 62px;
+    padding: 5.5px 2px 5.5px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #007fff;
+    border-radius: 3px;
+    transition: all 0.2s;
+}
+.headTop span{
+    content: '';
+    position: absolute;
+    top: 10.8px;
+    right: 115px;
+
+    width: 10px;
+    height: 30.3px;
+    background-color: #007fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #ffffff1a;
+    border-radius: 3px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    transition: all 0.2s;
+}
+.headTop .write:hover,
+.headTop span:hover{
+    background-color: rgb(6, 104, 202);
+}
+.headTop span::before{
+    content: '';
+    position: absolute;
+    right: 3px;
+    top: 50%;
+    z-index: 2;
+
+    width: 0px;
+    height: 0px;
+    border:3px solid transparent;
+    border-top: 4px solid white;
+}
+.headTop .loginBtn{
+    float: right;
+    position: relative;
+    right: 30px;
+    top: 11px;
+    width: 65px;
+    height: 30.2px;
+    border: 1px solid #007fff;
+    background-color: #fff;
+    border-radius: 2px;
+
+    font-size: 16px;
+    color: #007fff;
+}
+/* 导航栏下 */
+.headBottom{
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
+}
+.headBottom ul{
+    padding: 0px 0 13px;
+    margin-bottom: -32px;
+}
+.headBottom ul li{
+    display: inline-block;
+    position: relative;
+    padding: 0 21px 0 0;
+
+    height: 50px;
+    font-size: 14px;
+}
+.headBottom ul li:hover .explore{
+    display: flex;
+    color :#909090;
+}
+/* 二级菜单 */
+.explore {
+    display: none;
+    flex-wrap: wrap;
+    flex-direction: row;
+    
+    position: absolute;
+    left: -6px;
+    top: 32px;
+    z-index: 2;
+    width: 325px;
+    padding: 15px 15px 5px;
+    border: 1px solid rgb(238, 238, 238);
+    box-shadow: 3px 3px 0px 0 rgba(0, 0, 0, 0.05);
+    background-color: white;
+}
+.explore span{
+    padding: 3px 8px 0;
+    margin: 0 10px 10px 0;
+    background-color: rgb(244, 245, 245);
+
+    border-radius: 15px;
+}
+.explore span:hover{
+    color: #007fff;
+}
+/* 登陆后 */
+.loginAfter{
+    display: none;
+    z-index: 3;
+    float: right;
+    position: relative;
+    top: -42px;
+    right: 25px;
+}
+/* 头像框 */
+.portrait{
+    display: inline-block;
+
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+.portrait img{
+    width: 100%;
+    height: 100%;
+}
+/* 消息提示 */
+.ring{
+    position: absolute;
+    left: -40px;
+    top: 3px;
+
+    width: 25px;
+}

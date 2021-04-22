@@ -1,0 +1,213 @@
+.personal_page{    
+    display: flex;
+    position: absolute;
+    top: 80px;
+    width: 990px;
+    margin: 0 auto;
+}
+/* 主要区域 */
+.major_area{
+    flex: 1 1 auto;
+    min-width: 0;
+}
+.major_area_top{
+    display: flex;
+    padding: 30px;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px 0 #0000000d;
+}
+.major_area_top img{
+    width: 90px;
+    height: 90px;
+    margin-right: 28.8px;
+
+    border-radius: 50%; 
+}
+.info_box h1{
+    margin-bottom: 10px;
+
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #000;
+}
+.info_box a{
+    color: #4a68ad; 
+}
+.info_box a:hover{
+    color: rgb(158, 174, 211);
+}
+.info_box a::before{
+    content: '+ ';
+}
+.it_can_change{
+    display: block;
+    /* width: 380px; */
+    margin-top: 5px;
+}
+.major_area_top button{
+    width: 9.834rem;
+    color: #3780f7;
+    height: 2.834rem;
+    font-size: 1.333rem;
+    outline: none;
+    font-weight: 500;
+    line-height: 1.2;
+    border: 1px solid;
+    background-color: #fff;
+    border-radius: 4px;
+}
+.major_area_bottom{
+    margin-top: 15px;
+    background-color: white;
+}
+.major_area_bottom_nav{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-radius: .2rem .2rem 0 0;
+    border-bottom: 1px solid #ebebeb;
+}
+.major_area_bottom_nav span{
+    position: relative;
+    display: flex;
+    width: 90px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: 2px solid  transparent;
+    cursor: pointer;
+}
+.major_area_bottom_nav .underlineBlue{
+    color: #3780f7;
+    border-bottom: 2px solid  #3780f7;
+}
+.nav_likeNum{
+    margin-left: .4rem;
+    font-size: 16px;
+    color: #b2bac2;
+}
+.major_area_bottom_nav span:nth-of-type(3)::after,
+.nav_likeNum::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 13%;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-top: 7px solid #b2bac2;
+}
+.more_panel{
+    position: absolute;
+    top: 100%;
+    left: 60%;
+    margin: 0 0 0 -3.75rem;
+    padding: 10px 0;
+    width: 100px;
+    background-color: #fff;
+    border: 1px solid #f3f3f4;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
+    z-index: 1;
+}
+.more_panel a{
+    display: block;
+    padding: .6rem 0;
+    font-size: 16px;
+    text-align: center;
+    color: #000;
+}
+.list_header div:nth-of-type(1){
+    display: flex;
+    align-items: center;
+    padding: 0 1.6rem;
+    height: 50px;
+    border-bottom: 2px solid rgba(230,230,231,.5);
+}
+.list_header div span{
+    position: relative;
+    padding: 1rem 0;
+    margin: 0 16px 0;
+    font-size: 14px;
+    color: #72777b;
+}
+.list_header div span:nth-of-type(1)::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -18px;
+    width: 1px;
+    height: 30%;
+    background-color: rgb(175, 179, 184);
+    transform: translate(-50%,-50%);
+}
+.artical_list{
+    padding: 2rem 0;
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+}
+.list_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #b2bac2;
+    background-color: #fff;
+}
+
+.minor_area{
+    flex:0 0 auto;
+    margin-left: 1rem;
+    width: 15rem;
+    line-height: 1.2
+}
+.attention{
+    /* position: fixed; */
+    display: flex;
+    background-color: white;
+    margin-bottom: 10px;
+}
+.attention span{
+    position: relative;
+    flex: 1 0 auto;
+    padding: 1.333rem 0;
+    text-align: center;
+    color: #31445b;
+}
+.subscribe_count,
+.subscribed_count{
+    margin-top: .5rem;
+    font-weight: 600;
+}
+/* 小分割线 */
+.attention span:nth-of-type(1)::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 2px;
+    height: 50%;
+    background-color: #f3f3f4;
+    transform: translate(-50%,-50%);
+}
+.collect div{
+    display: flex;
+    padding: 1rem .4rem;
+    color: #000;
+    border-top: 1px solid rgba(230,230,231,.5);
+    cursor: pointer;
+}
+.collect div:hover{
+    color: rgb(99, 99, 99);
+}
+.collect div:last-of-type{
+    border-bottom: 1px solid rgba(230,230,231,.5);
+    cursor:text
+}

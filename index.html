@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 通用样式 -->
+    <link rel="stylesheet" href="css/common.css" />
+    <!-- 全局样式 -->
+    <link rel="stylesheet" href="css/global.css" />
+    <!-- 导航栏样式 -->
+    <link rel="stylesheet" href="css/header.css" />
+    <!-- 文章栏样式 -->
+    <link rel="stylesheet" href="css/page.css" />
+    <!-- 个人主页样式 -->
+    <link rel="stylesheet" href="css/personal_page.css" />
+    <!-- 修改个人资料 -->
+    <link rel="stylesheet" href="css/changeInfo.css">
+  </head>
+  <body>
+    <!-- 全局样式 -->
+    <!-- 登录灰色遮挡层 -->
+    <div class="barrier">
+      <!-- 登录 -->
+      <div class="login">
+        <img src="img/熊猫头初始.png" alt="" id="panda" />
+        <h3>
+          账密登录
+          <span
+            ><img src="img/叉.png" alt="" title="关闭" class="close"
+          /></span>
+        </h3>
+        <input type="text" placeholder="邮箱、手机号（国际号码加区号）" />
+        <input type="password" placeholder="请输入密码" />
+        <button id="loginBtn">登录</button>
+        <div class="otherChoice">
+          <span>手机登录</span>
+          <span>忘记密码</span>
+        </div>
+        <div class="otherWay">
+          <span
+            ><img
+              src="//sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/weibo.fa758eb.svg"
+              alt=""
+              title="微博"
+          /></span>
+          <span
+            ><img
+              src="//sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/wechat.e0ff124.svg"
+              alt=""
+              title="微信"
+          /></span>
+          <span
+            ><img
+              src="//sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/github.547dd8a.svg"
+              alt=""
+              title="Github"
+          /></span>
+        </div>
+        <p>
+          注册登录即表示同意
+          <span>用户协议</span> 、
+          <span>隐私政策</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- 个人功能 -->
+    <div class="function center">
+      <ul>
+        <li><img src="img/写文章.png" alt="" />写文章</li>
+        <li><img src="img/人.png" alt="" />我的主页</li>
+        <li class="logout"><img src="img/退出.png" alt="" />登出</li>
+      </ul>
+    </div>
+
+    <!-- 个人主页 -->
+    <div class="center" >
+      <div class="personal_page" style="display: none;">
+        <div class="major_area">
+          <div class="major_area_top">
+            <img src="img\熊猫头闭眼.png" alt="" />
+
+            <div class="info_box" style="margin-right: 25px;flex:1 1 auto;">
+              <h1>JC519</h1>
+              <a href="Javascript:;">你从事什么职业？</a><br>
+              <a href="Javascript:;" class="it_can_change">你有哪些爱好</a>
+            </div>
+
+            <div class="action_box"></div>
+            <button class="change_Info_Btn">编辑个人资料</button>
+          </div>
+          <div class="major_area_bottom">
+            <div class="major_area_bottom_nav">
+              <span class="underlineBlue">文章</span>
+              <span>赞<div class="nav_likeNum">0</div>
+                <div class="more_panel" style="display: none;">
+                  <a href="javascript:;" id="assit">文章 0</a>
+                  <a href="javascript:;" id="assit">沸点 0</a>
+                </div>
+              </span>
+              <span>更多
+                <div class="more_panel" style="display: none;">
+                  <a href="javascript:;" id="assit">收藏集</a>
+                  <a href="javascript:;" id="assit">关注</a>
+                </div>
+              </span>
+            </div>
+            <div class="major_area_bottom_list">
+              <div class="list_header">
+                <div>
+                  <h3 style="margin-right: auto;">文章</h3>
+                  <span>热门</span><span>最新</span>
+                </div>
+                <ul class="artical_list">
+                  <span>列表为空</span>
+                  <li></li>
+                </ul>
+              </div>
+              <div class="list_box">
+                <img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiBlbXB0eS1pY29uIiB3aWR0aD0iNjYiIGhlaWdodD0iNjgiIHZpZXdCb3g9IjAgMCA2NiA2OCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNCAzKSI+CiAgICAgICAgPGcgZmlsbD0iI0Y3RjdGNyI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik05IDEwaDIzLjc1MXYzLjIyMUg5ek05IDE2LjQ5NGg0MS4wODN2NC4wMjZIOXpNOSAyNi4xMDRoMjMuNzUxdjMuMjIxSDl6TTkgNDIuMjA4aDIzLjc1MXYzLjIyMUg5ek05IDMzLjM1MWg0MS4wODN2NC4wMjZIOXpNOSA0OS40NTVoNDEuMDgzdjQuMDI2SDl6Ii8+CiAgICAgICAgPC9nPgogICAgICAgIDxyZWN0IHdpZHRoPSI1NiIgaGVpZ2h0PSI2MCIgeD0iMS4xMzkiIHk9IjEuMzM4IiBzdHJva2U9IiNFQkVCRUIiIHN0cm9rZS13aWR0aD0iMiIgcng9IjYiLz4KICAgIDwvZz4KPC9zdmc+Cg==" alt="">
+                <p style="margin-top: 10px;">这里什么也没有</p>
+              </div>
+            </div>
+          </div>
+            
+        </div>
+        <div class="minor_area">
+          <div style="position: fixed;width: 15rem;">
+            <div class="attention">
+            <span>
+              <div>关注了</div>
+              <div class="subscribe_count">0</div>
+            </span>
+            <span>
+              <div>关注者</div>
+              <div class="subscribed_count">0</div>
+            </span>
+            </div>
+
+            <div class="collect">
+            <div>
+              <span style="margin-right: auto;">收藏集</span><span>0</span>
+            </div>
+            <div>
+              <span style="margin-right: auto;">关注标签</span><span>0</span>
+            </div>
+            <div>
+              <span style="margin-right: auto;">加入于</span><span>2021-04-18</span>
+            </div>
+            </div> 
+          </div>
+        </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- 修改个人资料 -->
+    <div class="changeInfo">
+        <header class="headTop">
+          <div class="center">
+            <ul>
+              <li>返回个人主页</li>
+              <li>个人资料</li>
+              <li>账号设置</li>
+              <li>建立管理</li>
+            </ul>
+          </div>
+
+        </header>
+    </div>
+    <!-- 顶部导航栏 -->
+    <header class="headTop">
+      <div class="center">
+        <img src="img/logo.a7995ad.svg" alt="" class="logo" />
+        <ul>
+          <li class="blue" id="home_page">首页</li>
+          <li>沸点</li>
+          <li>小册</li>
+          <li>活动</li>
+          <li>
+            <img
+              src="http://sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/recruitment.8b39c6d.svg"
+              alt=""
+            />
+          </li>
+          <li id="seek">
+            <input type="text" placeholder="探索掘金" />
+            <button><img src="/img/放大镜.png" alt="" /></button>
+          </li>
+        </ul>
+        <button class="write">写文章</button>
+        <span></span>
+        <button class="loginBtn">登录</button>
+        <div class="loginAfter">
+          <img src="img/消息.png" alt="" class="ring" />
+          <div class="portrait"><img src="" alt="" /></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 首页 -->
+    <div class="home_page" style="display: none;">
+      <!-- 导航栏下 -->
+      <div class="headBottom">
+        <div class="center">
+          <ul>
+            <li class="blue">推荐</li>
+            <li>
+              后端
+              <div class="explore">
+                <span>Java</span>
+                <span>后端</span>
+                <span>Go</span>
+                <span>spring boot</span>
+                <span>Python</span>
+                <span>MySQL</span>
+                <span>Spring</span>
+                <span>Redis</span>
+                <span>JVM</span>
+                <span>算法</span>
+                <span>数据库</span>
+                <span>Linux</span>
+                <span>架构</span>
+                <span>Spring Cloud</span>
+                <span>设计模式</span>
+              </div>
+            </li>
+            <li>
+              前端
+              <div class="explore">
+                <span>JavaScript</span>
+                <span>前端</span>
+                <span>Vue.js</span>
+                <span>React.js</span>
+                <span>CSS</span>
+                <span>Node.js</span>
+                <span>Webpack</span>
+                <span>面试</span>
+                <span>微信小程序</span>
+                <span>TypeScript</span>
+                <span>算法</span>
+                <span>前端框架</span>
+                <span>浏览器</span>
+                <span>ECMAScript 6</span>
+              </div>
+            </li>
+            <li>
+              Android
+              <div class="explore">
+                <span>Android</span>
+                <span>Flutter</span>
+                <span>Kotlin</span>
+                <span>Java</span>
+                <span>源码</span>
+                <span>Android</span>
+                <span>gradle</span>
+                <span>面试</span>
+                <span>性能优化</span>
+                <span>Github</span>
+                <span>Android Studio</span>
+                <span>OpenGL</span>
+                <span>架构</span>
+                <span>开源</span>
+                <span>RxJava</span>
+              </div>
+            </li>
+            <li>
+              iOS
+              <div class="explore">
+                <span>iOS</span>
+                <span>Swift</span>
+                <span>Objective-C</span>
+                <span>Flutter</span>
+                <span>OpenGL</span>
+                <span>SwiftUI</span>
+                <span>APPLE</span>
+                <span>Xcode</span>
+                <span>RxSwift</span>
+                <span>算法</span>
+                <span>逆向</span>
+                <span>面试</span>
+                <span>CocoaPods</span>
+                <span>性能优化</span>
+                <span>设计模式</span>
+              </div>
+            </li>
+            <li>
+              人工智能
+              <div class="explore">
+                <span>人工智能</span>
+                <span>机器学习</span>
+                <span>深度学习</span>
+                <span>算法</span>
+                <span>Python</span>
+                <span>NLP</span>
+                <span>TensorFlow</span>
+                <span>神经网络</span>
+                <span>计算机视觉</span>
+                <span>数据分析</span>
+                <span>掘金翻译计划</span>
+                <span>Goodle</span>
+                <span>Github</span>
+                <span>PyTorch</span>
+                <span>大数据</span>
+              </div>
+            </li>
+            <li>
+              开发工具
+              <div class="explore">
+                <span>Git</span>
+                <span>Github</span>
+                <span>Linux</span>
+                <span>vscode</span>
+                <span>数据库</span>
+                <span>Python</span>
+                <span>Java</span>
+                <span>前端</span>
+                <span>Intellij IDEA</span>
+                <span>程序员</span>
+                <span>开源</span>
+                <span>Linux</span>
+                <span>Docker</span>
+                <span>Serverless</span>
+                <span>chrome</span>
+                <span>命令行</span>
+                <span>命令行</span>
+                <span>命令行</span>
+                <span>命令行</span>
+              </div>
+            </li>
+            <li>
+              代码人生
+              <div class="explore">
+                <span>Java</span>
+                <span>程序员</span>
+                <span>算法</span>
+                <span>前端</span>
+                <span>Python</span>
+                <span>年终终结</span>
+                <span>代码规范</span>
+                <span>后端</span>
+                <span>乐扣</span>
+                <span>Linux</span>
+                <span>测试</span>
+                <span>Linux</span>
+                <span>数据结构</span>
+                <span>面试</span>
+                <span>设计模式</span>
+              </div>
+            </li>
+            <li>
+              阅读
+              <div class="explore">
+                <span>Java</span>
+                <span>前端</span>
+                <span>JavaScript</span>
+                <span>运维</span>
+                <span>Python</span>
+                <span>Linux</span>
+                <span>面试</span>
+                <span>Redis</span>
+                <span>Android</span>
+                <span>算法</span>
+                <span>数据库</span>
+                <span>Linux</span>
+                <span>开源</span>
+                <span>设计模式</span>
+              </div>
+            </li>
+            <li style="float: right;">标签管理</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 文章栏 -->
+      <div class="page center">
+        <div class="artical">
+          <header>
+            <ul>
+              <li class="blue">热门</li>
+              <li>最新</li>
+              <li>热榜</li>
+            </ul>
+          </header>
+          <ul class="option">
+            <li>
+              <div>
+                <span>阿里巴巴云原生</span>
+                ·2天前·
+              </div>
+              <h3>Nacos2.0性能提升10倍，贡献值80%以上来自阿里之外</h3>
+              <ul>
+                <li>
+                  <img
+                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTAgMGgxNnYxNkgweiIvPgogICAgICAgIDxwYXRoIGZpbGw9IiNCMkJBQzIiIGQ9Ik00LjIzNCA2LjY5M3Y3LjI0M0gyLjg4MWMtLjQ4NiAwLS44ODEtLjQ5Mi0uODgxLTEuMDk1VjcuODc1YzAtLjYzLjQxMi0xLjE4Mi44OC0xLjE4MmgxLjM1NHptMy42ODgtMy43QzguMDEgMi40MDQgOC40OSAxLjk5IDkuMDE4IDJjLjc1NC4wMTUgMS4yMDQuNjYzIDEuMzYuOTgzLjI4NC41ODUuMjkyIDEuNTQ5LjA5NyAyLjE2Ny0uMTc3LjU2LS41ODYgMS4yOTYtLjU4NiAxLjI5NmgzLjA2NmMuMzI0IDAgLjYyNS4xNjQuODI2LjQ0OS4yMDQuMjkuMjcuNjY4LjE3OCAxLjAxMWwtMS4zODcgNS4xODNjLS4xMjYuNDk5LS41NDQuODQ3LTEuMDE2Ljg0N0g1LjUzVjYuNjkzYzEuMzg1LS4zMDkgMi4yMzYtMi42MzIgMi4zOTItMy43eiIvPgogICAgPC9nPgo8L3N2Zz4K"
+                    alt=""
+                    style="width: 20px"
+                  />
+                  <span>15</span>
+                </li>
+                <li>
+                  <img src="img/下载.png" alt="" style="width: 20px" />
+                  <span>15</span>
+                </li>
+                <li>
+                  <img
+                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PHRpdGxlPjc1MzFEREU0LTZCMzgtNDI4Ny04QTJBLUY2ODVGMDgzNUFGQzwvdGl0bGU+PGRlZnM+PHJlY3QgaWQ9ImEiIHg9IjU5IiB5PSI1NCIgd2lkdGg9IjU0IiBoZWlnaHQ9IjI1IiByeD0iMSIvPjxtYXNrIGlkPSJiIiB4PSIwIiB5PSIwIiB3aWR0aD0iNTQiIGhlaWdodD0iMjUiIGZpbGw9IiNmZmYiPjx1c2UgeGxpbms6aHJlZj0iI2EiLz48L21hc2s+PC9kZWZzPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC02OCAtNTYpIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGZpbGw9IiNCMkJBQzIiIGQ9Ik03MiA2MXY4LjAzOGg0LjQ0NEw4MS4xMTEgNzJ2LTIuOTYySDg0VjYxeiIvPjx1c2Ugc3Ryb2tlPSIjRURFRUVGIiBtYXNrPSJ1cmwoI2IpIiBzdHJva2Utd2lkdGg9IjIiIHhsaW5rOmhyZWY9IiNhIi8+PC9nPjwvc3ZnPg=="
+                    alt=""
+                  />
+                  <span>15</span>
+                </li>
+                <li>
+                  <img
+                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+QjFBMjZEODAtQ0ZCRC00REIyLThCQTAtODc0MEVBMTE2RTExPC90aXRsZT48ZyBzdHJva2U9IiNBQUIwQkEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHBhdGggZD0iTTEwLjUyNCAzLjQxM3Y4LjIzNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik0xMy4wMjcgNy41MDhjLjgxMyAwIDEuNjc4LS4wMSAxLjY3OC0uMDEuNDQ5IDAgLjgxMi4zNzYuODEyLjgyNmwtLjAwNSA2LjM2YS44MTkuODE5IDAgMCAxLS44MTEuODI2SDYuMzFhLjgyMi44MjIgMCAwIDEtLjgxMS0uODI2bC4wMDUtNi4zNmMwLS40NTYuMzYtLjgyNS44MTItLjgyNWwxLjY4OS4wMDZNOC4zNzMgNS4xMTFsMi4xNDMtMi4wOSAyLjE0MyAyLjA3Ii8+PC9nPjwvc3ZnPg=="
+                    alt=""
+                  />
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div>
+                <span>智能健康大前端团队</span>
+                ·1天前·
+              </div>
+              <h3>【译】z-index 特喵到底是什么？</h3>
+              <ul>
+                <li>
+                  <img
+                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTAgMGgxNnYxNkgweiIvPgogICAgICAgIDxwYXRoIGZpbGw9IiNCMkJBQzIiIGQ9Ik00LjIzNCA2LjY5M3Y3LjI0M0gyLjg4MWMtLjQ4NiAwLS44ODEtLjQ5Mi0uODgxLTEuMDk1VjcuODc1YzAtLjYzLjQxMi0xLjE4Mi44OC0xLjE4MmgxLjM1NHptMy42ODgtMy43QzguMDEgMi40MDQgOC40OSAxLjk5IDkuMDE4IDJjLjc1NC4wMTUgMS4yMDQuNjYzIDEuMzYuOTgzLjI4NC41ODUuMjkyIDEuNTQ5LjA5NyAyLjE2Ny0uMTc3LjU2LS41ODYgMS4yOTYtLjU4NiAxLjI5NmgzLjA2NmMuMzI0IDAgLjYyNS4xNjQuODI2LjQ0OS4yMDQuMjkuMjcuNjY4LjE3OCAxLjAxMWwtMS4zODcgNS4xODNjLS4xMjYuNDk5LS41NDQuODQ3LTEuMDE2Ljg0N0g1LjUzVjYuNjkzYzEuMzg1LS4zMDkgMi4yMzYtMi42MzIgMi4zOTItMy43eiIvPgogICAgPC9nPgo8L3N2Zz4K"
+                    alt=""
+                    style="width: 20px"
+                  />
+                  <span>27</span>
+                </li>
+                <li>
+                  <img src="img/下载.png" alt="" style="width: 20px" />
+                  <span>15</span>
+                </li>
+                <li>
+                  <img
+                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PHRpdGxlPjc1MzFEREU0LTZCMzgtNDI4Ny04QTJBLUY2ODVGMDgzNUFGQzwvdGl0bGU+PGRlZnM+PHJlY3QgaWQ9ImEiIHg9IjU5IiB5PSI1NCIgd2lkdGg9IjU0IiBoZWlnaHQ9IjI1IiByeD0iMSIvPjxtYXNrIGlkPSJiIiB4PSIwIiB5PSIwIiB3aWR0aD0iNTQiIGhlaWdodD0iMjUiIGZpbGw9IiNmZmYiPjx1c2UgeGxpbms6aHJlZj0iI2EiLz48L21hc2s+PC9kZWZzPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC02OCAtNTYpIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGZpbGw9IiNCMkJBQzIiIGQ9Ik03MiA2MXY4LjAzOGg0LjQ0NEw4MS4xMTEgNzJ2LTIuOTYySDg0VjYxeiIvPjx1c2Ugc3Ryb2tlPSIjRURFRUVGIiBtYXNrPSJ1cmwoI2IpIiBzdHJva2Utd2lkdGg9IjIiIHhsaW5rOmhyZWY9IiNhIi8+PC9nPjwvc3ZnPg=="
+                    alt=""
+                  />
+                  <span>6</span>
+                </li>
+                <li>
+                  <img
+                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+QjFBMjZEODAtQ0ZCRC00REIyLThCQTAtODc0MEVBMTE2RTExPC90aXRsZT48ZyBzdHJva2U9IiNBQUIwQkEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHBhdGggZD0iTTEwLjUyNCAzLjQxM3Y4LjIzNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik0xMy4wMjcgNy41MDhjLjgxMyAwIDEuNjc4LS4wMSAxLjY3OC0uMDEuNDQ5IDAgLjgxMi4zNzYuODEyLjgyNmwtLjAwNSA2LjM2YS44MTkuODE5IDAgMCAxLS44MTEuODI2SDYuMzFhLjgyMi44MjIgMCAwIDEtLjgxMS0uODI2bC4wMDUtNi4zNmMwLS40NTYuMzYtLjgyNS44MTItLjgyNWwxLjY4OS4wMDZNOC4zNzMgNS4xMTFsMi4xNDMtMi4wOSAyLjE0MyAyLjA3Ii8+PC9nPjwvc3ZnPg=="
+                    alt=""
+                  />
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div>
+                <span> Android_开发者 </span>
+                ·2天前·
+              </div>
+              <h3>Kotlin 和 Jetpack 视频合集 | MAD Skills</h3>
+              <ul>
+                <li>
+                  <img
+                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTAgMGgxNnYxNkgweiIvPgogICAgICAgIDxwYXRoIGZpbGw9IiNCMkJBQzIiIGQ9Ik00LjIzNCA2LjY5M3Y3LjI0M0gyLjg4MWMtLjQ4NiAwLS44ODEtLjQ5Mi0uODgxLTEuMDk1VjcuODc1YzAtLjYzLjQxMi0xLjE4Mi44OC0xLjE4MmgxLjM1NHptMy42ODgtMy43QzguMDEgMi40MDQgOC40OSAxLjk5IDkuMDE4IDJjLjc1NC4wMTUgMS4yMDQuNjYzIDEuMzYuOTgzLjI4NC41ODUuMjkyIDEuNTQ5LjA5NyAyLjE2Ny0uMTc3LjU2LS41ODYgMS4yOTYtLjU4NiAxLjI5NmgzLjA2NmMuMzI0IDAgLjYyNS4xNjQuODI2LjQ0OS4yMDQuMjkuMjcuNjY4LjE3OCAxLjAxMWwtMS4zODcgNS4xODNjLS4xMjYuNDk5LS41NDQuODQ3LTEuMDE2Ljg0N0g1LjUzVjYuNjkzYzEuMzg1LS4zMDkgMi4yMzYtMi42MzIgMi4zOTItMy43eiIvPgogICAgPC9nPgo8L3N2Zz4K"
+                    alt=""
+                    style="width: 20px"
+                  />
+                  <span>15</span>
+                </li>
+                <li>
+                  <img src="img/下载.png" alt="" style="width: 20px" />
+                  <span>15</span>
+                </li>
+                <li>
+                  <img
+                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PHRpdGxlPjc1MzFEREU0LTZCMzgtNDI4Ny04QTJBLUY2ODVGMDgzNUFGQzwvdGl0bGU+PGRlZnM+PHJlY3QgaWQ9ImEiIHg9IjU5IiB5PSI1NCIgd2lkdGg9IjU0IiBoZWlnaHQ9IjI1IiByeD0iMSIvPjxtYXNrIGlkPSJiIiB4PSIwIiB5PSIwIiB3aWR0aD0iNTQiIGhlaWdodD0iMjUiIGZpbGw9IiNmZmYiPjx1c2UgeGxpbms6aHJlZj0iI2EiLz48L21hc2s+PC9kZWZzPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC02OCAtNTYpIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGZpbGw9IiNCMkJBQzIiIGQ9Ik03MiA2MXY4LjAzOGg0LjQ0NEw4MS4xMTEgNzJ2LTIuOTYySDg0VjYxeiIvPjx1c2Ugc3Ryb2tlPSIjRURFRUVGIiBtYXNrPSJ1cmwoI2IpIiBzdHJva2Utd2lkdGg9IjIiIHhsaW5rOmhyZWY9IiNhIi8+PC9nPjwvc3ZnPg=="
+                    alt=""
+                  />
+                  <span>2</span>
+                </li>
+                <li>
+                  <img
+                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+QjFBMjZEODAtQ0ZCRC00REIyLThCQTAtODc0MEVBMTE2RTExPC90aXRsZT48ZyBzdHJva2U9IiNBQUIwQkEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHBhdGggZD0iTTEwLjUyNCAzLjQxM3Y4LjIzNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik0xMy4wMjcgNy41MDhjLjgxMyAwIDEuNjc4LS4wMSAxLjY3OC0uMDEuNDQ5IDAgLjgxMi4zNzYuODEyLjgyNmwtLjAwNSA2LjM2YS44MTkuODE5IDAgMCAxLS44MTEuODI2SDYuMzFhLjgyMi44MjIgMCAwIDEtLjgxMS0uODI2bC4wMDUtNi4zNmMwLS40NTYuMzYtLjgyNS44MTItLjgyNWwxLjY4OS4wMDZNOC4zNzMgNS4xMTFsMi4xNDMtMi4wOSAyLjE0MyAyLjA3Ii8+PC9nPjwvc3ZnPg=="
+                    alt=""
+                  />
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="advertising"></div>
+      </div>
+    </div>
+  </body>
+
+  <script src="js.js"></script>
+</html>
